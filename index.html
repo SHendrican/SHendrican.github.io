@@ -311,6 +311,48 @@
   .area .krow{margin-top:11px;padding-top:11px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-2)}
   .area .krow strong{display:block;color:var(--ink);font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
 
+  /* ---------- knowledge center ---------- */
+  .kc-search{position:relative;margin-bottom:14px}
+  .kc-search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--ink-3);pointer-events:none}
+  .kc-search input{
+    width:100%;appearance:none;font:inherit;font-size:16px;color:var(--ink);
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:13px 16px 13px 44px;box-shadow:var(--shadow);
+  }
+  .kc-search input::placeholder{color:var(--ink-3)}
+  .kc-search input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  @media (prefers-color-scheme: dark){.kc-search input:focus-visible{outline-color:var(--accent-ink)}}
+  .kcbtn{
+    appearance:none;border:1px solid var(--line);background:var(--surface);
+    color:var(--ink-2);border-radius:999px;padding:8px 15px;
+    font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;
+  }
+  .kcbtn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .kcbtn:hover{border-color:var(--ink-3);color:var(--ink)}
+  .kcbtn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  @media (prefers-color-scheme: dark){.kcbtn:focus-visible{outline-color:var(--accent-ink)}}
+  .kc-count{margin:0 0 14px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-3)}
+  .kc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;align-items:start}
+  @media (max-width:640px){.kc-grid{grid-template-columns:1fr}}
+  .kc-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow)}
+  .kc-card[hidden]{display:none}
+  .kc-card .kc-tag{
+    display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;
+    letter-spacing:.05em;text-transform:uppercase;background:var(--chip);color:var(--ink-2);
+    border-radius:6px;padding:3px 8px;margin-bottom:9px;
+  }
+  .kc-card h3{margin:0 0 6px;font-size:16px;font-weight:700;line-height:1.3}
+  .kc-card p{margin:0;color:var(--ink-2);font-size:14px}
+  .kc-card p + p{margin-top:8px}
+  .kc-card .krow{margin-top:11px;padding-top:11px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-2)}
+  .kc-card .krow strong{display:block;color:var(--ink);font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+  .kc-empty{
+    background:var(--surface);border:1px dashed var(--line);border-radius:12px;
+    padding:22px;text-align:center;color:var(--ink-2);
+  }
+  .kc-empty[hidden]{display:none}
+  .kc-empty p{margin:0}
+
   /* ---------- career progression ---------- */
   .career-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
   .career-item{
@@ -374,6 +416,7 @@
       <a href="#case-studies">Case studies</a>
       <a href="#training">Training</a>
       <a href="#knowledge">Product knowledge</a>
+      <a href="#knowledge-center">Knowledge center</a>
       <a href="#career">Career path</a>
     </div>
     <a class="tn-contact" href="mailto:Sean.hendrican@bdi-canada.com">Contact Me</a>
@@ -872,6 +915,149 @@
     </div>
   </section>
 
+  <section id="knowledge-center" aria-labelledby="kc-h">
+    <div class="sec-head">
+      <h2 id="kc-h">Knowledge Center</h2>
+      <p>Product reference · identification guides</p>
+    </div>
+
+    <div class="kc-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="search" id="kcSearch" placeholder="Search the knowledge center — try “lip”, “idler” or “6201”…" aria-label="Search knowledge center entries" />
+    </div>
+
+    <div class="filters" role="group" aria-label="Filter knowledge center by category">
+      <button class="kcbtn" type="button" data-kc-filter="all" aria-pressed="true">All topics</button>
+      <button class="kcbtn" type="button" data-kc-filter="bearings" aria-pressed="false">Bearings</button>
+      <button class="kcbtn" type="button" data-kc-filter="power-transmission" aria-pressed="false">Power Transmission</button>
+      <button class="kcbtn" type="button" data-kc-filter="seals" aria-pressed="false">Seals</button>
+      <button class="kcbtn" type="button" data-kc-filter="hydraulics" aria-pressed="false">Hydraulics/Fluid Power</button>
+      <button class="kcbtn" type="button" data-kc-filter="safety" aria-pressed="false">Safety</button>
+      <button class="kcbtn" type="button" data-kc-filter="pumps-valves" aria-pressed="false">Pumps &amp; Valves</button>
+    </div>
+
+    <p class="kc-count" id="kcCount" aria-live="polite"></p>
+
+    <div class="kc-grid" id="kcGrid">
+      <article class="kc-card" data-category="bearings">
+        <span class="kc-tag">Bearings</span>
+        <h3>Ball and roller bearings — what they do</h3>
+        <p>Support rotating shafts and carry radial and axial loads while keeping friction low. The main families are ball bearings, roller bearings (cylindrical, spherical and tapered), mounted units, precision machine-tool bearings, and linear guides and shafting.</p>
+        <p class="krow"><strong>Common applications</strong>Mounted units on conveyors, precision bearings in machine tools, linear guides in automation, and general shaft support across plant equipment.</p>
+        <p class="krow"><strong>Questions to ask</strong>What shaft does it sit on, and what housing does it fit? Sealed, shielded or open? What speed and load does it see — and how did the old one fail?</p>
+      </article>
+
+      <article class="kc-card" data-category="bearings">
+        <span class="kc-tag">Bearings</span>
+        <h3>Identifying a bearing from its dimensions</h3>
+        <p>With no readable part number, measure the three dimensions — bore, outside diameter and width — then confirm the bearing type, whether it is sealed, shielded or open, and the internal clearance. The dimension set usually points to a bearing family, but every dimension still has to be checked individually.</p>
+        <p>Example: a bearing measuring 13 × 32 × 10&nbsp;mm sits in the 6201 size envelope (32&nbsp;mm outside diameter, 10&nbsp;mm wide), but a standard 6201 has a 12&nbsp;mm bore. The 13&nbsp;mm bore makes it the non-standard variant, 6201-13. Ordering the standard number off the envelope alone would put a bearing on the shaft that doesn’t fit it — the bore is the dimension that separates the two.</p>
+        <p class="krow"><strong>How to identify one</strong>Measure all three dimensions — bore, outside diameter, width — and treat any one that breaks the standard pattern as a variant to confirm, not a rounding error.</p>
+      </article>
+
+      <article class="kc-card" data-category="bearings">
+        <span class="kc-tag">Bearings</span>
+        <h3>Mounted bearing units</h3>
+        <p>A mounted unit combines a bearing insert with a housing — pillow block, flange or take-up — so the shaft support bolts straight down. Identification needs the shaft size, the housing style and bolt pattern, and the locking method: setscrew, eccentric collar or adapter sleeve.</p>
+        <p class="krow"><strong>Questions to ask</strong>What shaft size, and which housing style and footprint? How does the insert lock to the shaft? What sealing does the environment need?</p>
+      </article>
+
+      <article class="kc-card" data-category="power-transmission">
+        <span class="kc-tag">Power Transmission</span>
+        <h3>Couplings — identifying what you have</h3>
+        <p>For a coupling: the type, both shaft bores and keyways, and the torque it carries. Flexible couplings — including the CENTAFLEX range — absorb misalignment and shock through an elastic element; rigid and metallic types don’t, so the type has to match the drive, not just the shaft sizes.</p>
+        <p class="krow"><strong>Common applications</strong>Couplings and drives for pumps, conveyors, mixers, fans and packaging lines.</p>
+        <p class="krow"><strong>Questions to ask</strong>What is it driving, and at what power and speed? How much misalignment is in the setup? Is the flexible element or spider needed as well — or just the hubs?</p>
+      </article>
+
+      <article class="kc-card" data-category="power-transmission">
+        <span class="kc-tag">Power Transmission</span>
+        <h3>Idler sprockets vs. finished-bore drive sprockets</h3>
+        <p>Both run on roller chain of the same pitch, but they do opposite jobs. A drive sprocket has a finished bore with a keyway — usually with set screws — so it locks to the shaft and transmits torque. An idler sprocket has a bearing pressed into its bore: it spins freely on a fixed shaft or stud and only guides or tensions the chain. It transmits no torque.</p>
+        <p>To tell them apart, look at the bore. A keyway and set screws mean drive. A smooth bore with a visible bearing — inner race, seals or shields — means idler. For an idler, the dimension that matters is the bearing’s bore, which is the shaft or stud it rides on; for a drive sprocket it’s the finished bore and keyway size. Ordering one in place of the other leaves a sprocket that either free-wheels on a drive shaft or can’t spin on its stud.</p>
+        <p class="krow"><strong>How to identify one</strong>Check the bore first: keyway and set screws = drive sprocket; pressed-in bearing = idler. Then confirm the chain pitch and tooth count, which both types share.</p>
+      </article>
+
+      <article class="kc-card" data-category="power-transmission">
+        <span class="kc-tag">Power Transmission</span>
+        <h3>Belts and chain — reading the markings</h3>
+        <p>For belts, the profile and length markings printed on the belt identify it — the section and length of a V-belt, or the pitch and width of a synchronous (timing) belt. For roller chain, measure the pitch (pin-to-pin distance) and count the strands — single, duplex or triplex — and note whether it is ANSI or ISO/BS standard, as the two are not interchangeable.</p>
+        <p class="krow"><strong>Questions to ask</strong>Belt: which profile, and what length? Chain: what pitch, how many strands, ANSI or ISO/BS?</p>
+      </article>
+
+      <article class="kc-card" data-category="seals">
+        <span class="kc-tag">Seals</span>
+        <h3>Rotary shaft seals, hydraulic seals and O-rings</h3>
+        <p>Seals keep lubricant in and contamination out of rotating and reciprocating equipment. The range covers rotary shaft (oil) seals, hydraulic rod and piston seals, wipers, O-rings, and complete seal kits — including aftermarket kits matched by equipment model.</p>
+        <p class="krow"><strong>Common applications</strong>Seal kits for hydraulic cylinders and gearboxes, shaft seals on pumps and motors, sealing for washdown and process equipment.</p>
+        <p class="krow"><strong>Questions to ask</strong>What fluid is it sealing, and at what temperature and pressure? Is it a rod, piston, wiper or rotary application? Full kit, or individual seals?</p>
+      </article>
+
+      <article class="kc-card" data-category="seals">
+        <span class="kc-tag">Seals</span>
+        <h3>Identifying a seal — lip form matters as much as dimensions</h3>
+        <p>Start with the three dimensions — shaft diameter, housing bore and seal width — then look at the lip. Lip form decides what the seal actually does: a single lip with a garter spring retains oil or grease on a rotating shaft, an added dust lip keeps contamination out, and other lip arrangements handle different exclusion and pressure duties. Two seals with identical dimensions and different lip forms are not interchangeable.</p>
+        <p>Material matters the same way: nitrile (NBR) covers most oil and grease duty, while FKM (fluoroelastomer) suits higher temperatures and more aggressive fluids. A seal isn’t identified until the profile or cross-section, the lip arrangement, the presence of a garter spring, and the material are all confirmed alongside the dimensions.</p>
+        <p class="krow"><strong>How to identify one</strong>Measure shaft, bore and width — then record the lip form (single, double, dust lip), garter spring or not, and the material before treating it as a match.</p>
+      </article>
+
+      <article class="kc-card" data-category="seals">
+        <span class="kc-tag">Seals</span>
+        <h3>Seal kits — the equipment-model route</h3>
+        <p>On hydraulic cylinders, identifying seals one by one isn’t always necessary: seal kits are catalogued by equipment model, so the machine and cylinder model often point straight to the correct kit — rod, piston and wiper seals and wear rings together. When there’s no model to work from, each seal is measured and its profile identified individually.</p>
+        <p class="krow"><strong>Questions to ask</strong>Full kit, or individual seals? If it’s a cylinder application, what are the equipment make and model?</p>
+      </article>
+
+      <article class="kc-card" data-category="hydraulics">
+        <span class="kc-tag">Hydraulics/Fluid Power</span>
+        <h3>Hydraulic and pneumatic components — function first</h3>
+        <p>Start with the function — pump, valve, cylinder or motor — then port sizes and thread types, pressure rating, and any nameplate or casting numbers. Configuration (mounting, spool or porting pattern) has to match, not just size.</p>
+        <p class="krow"><strong>Common applications</strong>Cylinders, pumps and valves for presses, material handling, machine tools and plant equipment.</p>
+        <p class="krow"><strong>Questions to ask</strong>What pressure and flow does the system run at? What does the component drive or control? Any nameplate data or photos of the installed unit?</p>
+      </article>
+
+      <article class="kc-card" data-category="hydraulics">
+        <span class="kc-tag">Hydraulics/Fluid Power</span>
+        <h3>Tube and pipe fittings — thread type first</h3>
+        <p>Thread type and size come first — NPT, BSP and metric threads are not interchangeable, and forcing a mismatch damages both sides of the connection. Then confirm the tube or hose size, the material, the configuration (straight, elbow, tee) and the pressure rating.</p>
+        <p class="krow"><strong>Questions to ask</strong>What does it connect to on each end? What pressure does the line see? Stainless, steel or brass — and what’s running through it?</p>
+      </article>
+
+      <article class="kc-card" data-category="safety">
+        <span class="kc-tag">Safety</span>
+        <h3>Lockout/tagout — match the device to the energy source</h3>
+        <p>Lockout/tagout devices isolate equipment from its energy sources while maintenance is done. Match the device to the source it isolates — breaker, valve, plug or switch — and make sure every energy source on the machine is accounted for, not just the electrical supply.</p>
+        <p class="krow"><strong>Common applications</strong>Lockout/tagout for maintenance and energy isolation across plant equipment.</p>
+        <p class="krow"><strong>Questions to ask</strong>What equipment is being locked out, and how many energy sources does it have?</p>
+      </article>
+
+      <article class="kc-card" data-category="safety">
+        <span class="kc-tag">Safety</span>
+        <h3>Labels, tags and signage — material follows environment</h3>
+        <p>Match the label to where it will live: heat, chemicals, washdown and outdoor exposure decide the material and adhesive. Labels, tags and signage cover equipment identification, panels, pipes and hazardous areas across the plant.</p>
+        <p class="krow"><strong>Questions to ask</strong>Where will the labels live, and what do they have to survive?</p>
+      </article>
+
+      <article class="kc-card" data-category="pumps-valves">
+        <span class="kc-tag">Pumps &amp; Valves</span>
+        <h3>Pumps — confirming a replacement</h3>
+        <p>A pump replacement is confirmed on more than its connections: the pump type (gear, vane or piston in hydraulic service; centrifugal in process service), displacement or flow, operating pressure, shaft rotation, mounting pattern, and port sizes and locations. A pump that bolts up but turns the wrong way, or displaces the wrong volume, is not a match.</p>
+        <p class="krow"><strong>Questions to ask</strong>What pressure and flow does the system run at? Which way does the shaft turn? Any nameplate data — make, model, displacement?</p>
+      </article>
+
+      <article class="kc-card" data-category="pumps-valves">
+        <span class="kc-tag">Pumps &amp; Valves</span>
+        <h3>Valves — function, spool and porting</h3>
+        <p>Valves direct, limit or regulate flow. Identify by function first — directional, pressure or flow control — then the spool or porting pattern, how the valve is actuated (solenoid, manual or pilot), port sizes and thread type, and the pressure rating. On a directional valve, the spool configuration has to match the original, not just the body size.</p>
+        <p class="krow"><strong>Questions to ask</strong>What does the valve control, and how is it actuated? What are the port sizes, and what pressure does the system run at?</p>
+      </article>
+    </div>
+
+    <div class="kc-empty" id="kcEmpty" hidden>
+      <p>No entries match that search. Try a different keyword, or clear the category filter.</p>
+    </div>
+  </section>
+
   <section aria-labelledby="appr-h">
     <div class="sec-head">
       <h2 id="appr-h">How I learn a product</h2>
@@ -994,7 +1180,42 @@
   }
   bindCopy(document.getElementById('copyEmail'), document.getElementById('copyLabel'));
   bindCopy(document.getElementById('barCopyEmail'), document.getElementById('barCopyLabel'));
+
+  // Knowledge center — keyword search + category filter, entirely in the
+  // visitor's browser; nothing is sent anywhere. State is in-memory only.
+  var kcInput = document.getElementById('kcSearch');
+  var kcButtons = Array.prototype.slice.call(document.querySelectorAll('.kcbtn'));
+  var kcCards = Array.prototype.slice.call(document.querySelectorAll('.kc-card'));
+  var kcCount = document.getElementById('kcCount');
+  var kcEmpty = document.getElementById('kcEmpty');
+  var kcCat = 'all';
+  function kcApply(){
+    var terms = (kcInput.value || '').toLowerCase().split(/\s+/).filter(function(t){ return t.length > 0; });
+    var shown = 0;
+    kcCards.forEach(function(card){
+      var catOk = kcCat === 'all' || card.getAttribute('data-category') === kcCat;
+      var text = card.textContent.toLowerCase();
+      var textOk = terms.every(function(t){ return text.indexOf(t) !== -1; });
+      var show = catOk && textOk;
+      card.hidden = !show;
+      if (show) shown++;
+    });
+    if (kcCount) kcCount.textContent = 'Showing ' + shown + ' of ' + kcCards.length + ' entries';
+    if (kcEmpty) kcEmpty.hidden = shown !== 0;
+  }
+  if (kcInput && kcCards.length){
+    kcInput.addEventListener('input', kcApply);
+    kcButtons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        kcCat = btn.getAttribute('data-kc-filter');
+        kcButtons.forEach(function(b){ b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+        kcApply();
+      });
+    });
+    kcApply();
+  }
 })();
+
 </script>
 </body>
 </html>
