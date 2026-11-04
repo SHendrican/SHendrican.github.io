@@ -169,6 +169,21 @@
   .courses .cmeta{display:block;font-weight:400;color:var(--ink-3);font-size:13px;font-family:"IBM Plex Mono",monospace;margin-top:1px}
   .issuer[hidden]{display:none}
 
+  /* ---------- program groups (within an issuer card) ---------- */
+  .program{padding:2px 20px 8px}
+  .program + .program{border-top:1px solid var(--line);margin-top:6px;padding-top:14px}
+  .program-head{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;margin-bottom:6px}
+  .program-head h4{margin:0;font-size:15.5px;font-weight:700}
+  .program-head .pdate{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);white-space:nowrap}
+  .program-badge{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:13px;font-weight:600;color:var(--accent-ink);
+    background:var(--accent-soft);border-radius:6px;padding:4px 10px;margin-bottom:4px;
+  }
+  .program-badge svg{width:13px;height:13px;flex:0 0 13px}
+  .program .courses{padding:4px 0 8px}
+  @media (max-width:640px){.program-head .pdate{margin-left:0}}
+
   /* ---------- product knowledge ---------- */
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
   @media (max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}}
@@ -252,9 +267,9 @@
     </div>
 
     <div class="stats" role="list" aria-label="At a glance">
-      <div class="stat" role="listitem"><b>17</b><span>Courses completed</span></div>
+      <div class="stat" role="listitem"><b>49</b><span>Training completions</span></div>
       <div class="stat" role="listitem"><b>3</b><span>Manufacturers trained with</span></div>
-      <div class="stat" role="listitem"><b>2</b><span>Level 1 badges — Timken DTS</span></div>
+      <div class="stat" role="listitem"><b>3</b><span>Level 1 badges — Timken DTS</span></div>
       <div class="stat" role="listitem"><b>9</b><span>CENTAFLEX modules in one series</span></div>
     </div>
   </header>
@@ -330,7 +345,7 @@
   <section aria-labelledby="train-h">
     <div class="sec-head">
       <h2 id="train-h">Training &amp; credentials</h2>
-      <p>17 completions · Sep – Nov 2026</p>
+      <p>49 completions · Sep – Nov 2026</p>
     </div>
 
     <div class="recent-strip" aria-label="Recent training highlights">
@@ -341,8 +356,8 @@
       </div>
       <div class="recent-item">
         <span class="rdate">Oct 2026</span>
-        <strong>Timken DTS — Level 1 badges</strong>
-        <span class="rdetail">Bearing Badge and Mounted Bearings Badge (issued Oct 15).</span>
+        <strong>Timken DTS — 3 Level 1 program badges</strong>
+        <span class="rdetail">35 completed activities across the Bearing, Mounted Bearing and Industrial Motion programs (Oct 1–15).</span>
       </div>
       <div class="recent-item">
         <span class="rdate">Sep 2026</span>
@@ -385,20 +400,78 @@
     <article class="issuer" data-issuer="timken">
       <div class="issuer-head">
         <h3>Timken — Distributor Training School</h3>
-        <span class="badge">Level 1</span>
-        <span class="idate">Oct 2026</span>
+        <span class="badge">Level 1 · 35 activities</span>
+        <span class="idate">Oct 1–15, 2026</span>
       </div>
       <p>
-        Timken’s distributor-channel standard for bearing product knowledge. The Mounted
-        Bearings badge (digital badge issued Oct 15, 2026) covers mounted bearing
-        identification, key dimensions, features and benefits, nomenclature, housings,
-        seals and locking devices.
+        Timken’s distributor-channel standard for bearing product knowledge. My DTS Level 1
+        learning history shows 35 completed activities: 32 course completions across three
+        programs, plus the three program badges issued through Badgr. The Mounted Bearings
+        badge covers mounted bearing identification, key dimensions, features and benefits,
+        nomenclature, housings, seals and locking devices.
       </p>
-      <ul class="courses">
-        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Bearing Basics<span class="cmeta">Oct 1, 2026</span></span></li>
-        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">DTS Level 1 — Bearing Badge<span class="cmeta">Oct 2, 2026</span></span></li>
-        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">DTS Level 1 — Mounted Bearings Badge<span class="cmeta">Issued Oct 15, 2026</span></span></li>
-      </ul>
+
+      <div class="program">
+        <div class="program-head">
+          <h4>Bearing Program</h4>
+          <span class="pdate">Oct 1–2, 2026 · 11 activities</span>
+        </div>
+        <span class="program-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>Level 1 Bearing Badge — issued Oct 2, 2026</span>
+        <ul class="courses">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Welcome to Timken</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">E-Learning Introduction</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Bearing Basics</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Deep Groove Ball Bearing</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Cylindrical Roller Bearing</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Spherical Roller Bearing</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Tapered Roller Bearing</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Super Precision Ball Bearing</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Mounted Bearing Introduction</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Fafnir Mounted Ball Bearing</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Bearing Program</span></li>
+        </ul>
+      </div>
+
+      <div class="program">
+        <div class="program-head">
+          <h4>Mounted Bearing Program</h4>
+          <span class="pdate">Oct 2–15, 2026 · 8 activities</span>
+        </div>
+        <span class="program-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>Level 1 Mounted Bearings Badge — issued Oct 15, 2026</span>
+        <ul class="courses">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">U Series Mounted Ball Bearings</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Mounted SAF Split Pillow Block Spherical Roller Bearings</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Mounted SNT Split Plummer Block Spherical Roller Bearings</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Mounted Solid Block Spherical Roller Bearings</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Type E Mounted Tapered Roller Bearings</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Mounted Split Cylindrical Roller Bearings</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Corrosion-Resistant Mounted Bearings</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Mounted Bearing Program</span></li>
+        </ul>
+      </div>
+
+      <div class="program">
+        <div class="program-head">
+          <h4>Industrial Motion Program</h4>
+          <span class="pdate">Oct 15, 2026 · 13 activities</span>
+        </div>
+        <span class="program-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>Level 1 Industrial Motion Badge — issued Oct 15, 2026</span>
+        <ul class="courses">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Industrial Motion Introduction</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Elastomeric Couplings</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Metallic Couplings</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">ANSI Precision Roller Chain</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">ANSI Attachment Roller Chain</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">ISO/BS Precision Roller Chain</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">ISO/BS Attachment Roller Chain</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">V-Belts</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Synchronous Timing Belts</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Oil Seals</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">MultiLine Self-Fit Automatic Lubrication System</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Rollon Linear Guides and Linear Actuators</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Industrial Motion Program</span></li>
+        </ul>
+      </div>
     </article>
 
     <article class="issuer" data-issuer="nsk">
