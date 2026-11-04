@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Sean Hendrican — Experience &amp; Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#f4f4f1;
+    --surface:#ffffff;
+    --surface-2:#ececea;
+    --ink:#17202e;
+    --ink-2:#45536a;
+    --ink-3:#6b788e;
+    --line:#d9d9d2;
+    --accent:#c8500a;
+    --accent-ink:#a63f06;
+    --accent-soft:#fbe9dc;
+    --chip:#eef0f3;
+    --ok:#1e7a46;
+    --shadow:0 1px 2px rgba(23,32,46,.06),0 10px 30px -18px rgba(23,32,46,.28);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0e1219;
+      --surface:#161c27;
+      --surface-2:#1d2534;
+      --ink:#edf0f5;
+      --ink-2:#b6c0d0;
+      --ink-3:#8b97ab;
+      --line:#2a3446;
+      --accent:#f07f2e;
+      --accent-ink:#ffa25e;
+      --accent-soft:#3a2413;
+      --chip:#212b3d;
+      --ok:#4cc084;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -18px rgba(0,0,0,.7);
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:16px;line-height:1.55;
+  }
+  a{color:var(--accent-ink)}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px 72px}
+
+  /* ---------- header ---------- */
+  header.profile{padding:44px 0 0}
+  .id-row{display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap}
+  .avatar{
+    width:84px;height:84px;flex:0 0 84px;border-radius:14px;
+    background:var(--ink);color:var(--bg);
+    display:flex;align-items:center;justify-content:center;
+    font-family:"IBM Plex Serif",serif;font-weight:700;font-size:30px;letter-spacing:.02em;
+  }
+  @media (prefers-color-scheme: dark){.avatar{background:var(--accent);color:#16100a}}
+  .id-main{flex:1 1 320px;min-width:260px}
+  h1{
+    font-family:"IBM Plex Serif",Georgia,serif;font-weight:700;
+    font-size:clamp(30px,5.4vw,44px);line-height:1.08;margin:2px 0 6px;letter-spacing:-.01em;
+  }
+  .role{font-size:clamp(16px,2.6vw,19px);font-weight:600;color:var(--accent-ink);margin:0 0 4px}
+  .loc{color:var(--ink-2);margin:0;font-size:15px}
+  .summary{max-width:68ch;color:var(--ink-2);margin:20px 0 0;font-size:16.5px}
+  .summary strong{color:var(--ink)}
+
+  .contact-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 16px;border-radius:9px;border:1px solid var(--line);
+    background:var(--surface);color:var(--ink);text-decoration:none;
+    font-size:14.5px;font-weight:600;box-shadow:var(--shadow);
+  }
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  @media (prefers-color-scheme: dark){.btn.primary{color:#1a1006}}
+  .btn svg{width:16px;height:16px;flex:0 0 16px}
+  .btn .copied{color:var(--ok)}
+
+  /* ---------- stats ---------- */
+  .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0 8px;
+  }
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 16px 13px;box-shadow:var(--shadow)}
+  .stat b{display:block;font-size:30px;line-height:1;font-weight:700;letter-spacing:-.02em}
+  .stat span{display:block;margin-top:7px;font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+  @media (max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  /* ---------- sections ---------- */
+  section{margin-top:46px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:22px}
+  .sec-head h2{font-size:21px;font-weight:700;margin:0;letter-spacing:-.01em}
+  .sec-head p{margin:0;color:var(--ink-3);font-size:13.5px;font-family:"IBM Plex Mono",monospace}
+
+  /* ---------- experience timeline ---------- */
+  .job{display:grid;grid-template-columns:170px 1fr;gap:8px 26px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .job:first-of-type{padding-top:4px}
+  .job:last-of-type{border-bottom:none}
+  .job .when{font-family:"IBM Plex Mono",monospace;font-size:13.5px;color:var(--ink-3);padding-top:3px;white-space:nowrap}
+  .job h3{margin:0 0 2px;font-size:18px;font-weight:700}
+  .job .org{margin:0 0 10px;font-weight:600;color:var(--accent-ink);font-size:15px}
+  .job p{margin:0 0 10px;color:var(--ink-2);max-width:62ch}
+  .job ul{margin:0;padding-left:18px;color:var(--ink-2)}
+  .job li{margin:5px 0}
+  .job li::marker{color:var(--accent)}
+  @media (max-width:640px){.job{grid-template-columns:1fr}.job .when{padding-top:0}}
+
+  /* ---------- training ---------- */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+  .fbtn{
+    appearance:none;border:1px solid var(--line);background:var(--surface);
+    color:var(--ink-2);border-radius:999px;padding:8px 15px;
+    font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;
+  }
+  .fbtn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .fbtn:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  .issuer{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden}
+  .issuer-head{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;padding:18px 20px 6px}
+  .issuer-head h3{margin:0;font-size:17.5px;font-weight:700}
+  .issuer-head .badge{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;
+    background:var(--accent-soft);color:var(--accent-ink);border-radius:6px;padding:3px 8px;
+  }
+  .issuer-head .idate{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-3)}
+  .issuer > p{margin:2px 20px 12px;color:var(--ink-2);font-size:14.5px;max-width:64ch}
+  .courses{list-style:none;margin:0;padding:6px 12px 14px}
+  .courses li{
+    display:flex;gap:12px;align-items:flex-start;
+    padding:10px 8px;border-top:1px solid var(--line);
+  }
+  .courses li:first-child{border-top:none}
+  .tick{
+    flex:0 0 22px;width:22px;height:22px;border-radius:50%;
+    background:var(--ok);color:#fff;display:flex;align-items:center;justify-content:center;margin-top:1px;
+  }
+  .tick svg{width:12px;height:12px}
+  .courses .cname{font-weight:600;font-size:15px}
+  .courses .cmeta{display:block;font-weight:400;color:var(--ink-3);font-size:13px;font-family:"IBM Plex Mono",monospace;margin-top:1px}
+  .issuer[hidden]{display:none}
+
+  /* ---------- product knowledge ---------- */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media (max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:480px){.grid{grid-template-columns:1fr}}
+  .area{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
+  .area h3{margin:0 0 6px;font-size:15.5px;font-weight:700}
+  .area p{margin:0;color:var(--ink-2);font-size:14px}
+
+  /* ---------- approach ---------- */
+  .approach{background:var(--surface-2);border-radius:14px;padding:24px 24px 20px}
+  .approach .flow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-weight:700;font-size:17px;margin-bottom:10px}
+  .approach .flow .arrow{color:var(--accent);font-weight:400}
+  .approach p{margin:0;color:var(--ink-2);max-width:66ch}
+
+  footer{margin-top:52px;border-top:1px solid var(--line);padding-top:18px;color:var(--ink-3);font-size:13.5px;display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between}
+  footer a{color:var(--ink-2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="profile">
+    <div class="id-row">
+      <div class="avatar" aria-hidden="true">SH</div>
+      <div class="id-main">
+        <h1>Sean Hendrican</h1>
+        <p class="role">Inside Sales — BDI Canada Inc.</p>
+        <p class="loc">Windsor, Ontario · Industrial &amp; MRO distribution</p>
+      </div>
+    </div>
+
+    <p class="summary">
+      Inside sales specialist in industrial MRO distribution, working daily with bearings, power
+      transmission, hydraulics, pneumatics, seals and plant-safety products for manufacturers
+      across Windsor–Essex and Southwestern Ontario. I build product knowledge the structured
+      way — <strong>manufacturer training first, then the application, then the customer’s
+      problem</strong> — and I’m building toward outside sales and an MRO specialty.
+    </p>
+
+    <div class="contact-row">
+      <a class="btn primary" href="mailto:Sean.hendrican@bdi-canada.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        Sean.hendrican@bdi-canada.com
+      </a>
+      <a class="btn" href="tel:+15199451733">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        519-945-1733
+      </a>
+      <button class="btn" id="copyEmail" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        <span id="copyLabel">Copy email</span>
+      </button>
+      <span class="btn" aria-label="Office address">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        3255 Electricity Dr, Unit B, Windsor ON
+      </span>
+    </div>
+
+    <div class="stats" role="list" aria-label="At a glance">
+      <div class="stat" role="listitem"><b>17</b><span>Courses completed</span></div>
+      <div class="stat" role="listitem"><b>3</b><span>Manufacturers trained with</span></div>
+      <div class="stat" role="listitem"><b>2</b><span>Level 1 badges — Timken DTS</span></div>
+      <div class="stat" role="listitem"><b>9</b><span>CENTAFLEX modules in one series</span></div>
+    </div>
+  </header>
+
+  <section aria-labelledby="exp-h">
+    <div class="sec-head">
+      <h2 id="exp-h">Experience</h2>
+      <p>2021 — present</p>
+    </div>
+
+    <article class="job">
+      <div class="when">2026 — Present</div>
+      <div>
+        <h3>Inside Sales</h3>
+        <p class="org">BDI Canada Inc. — Windsor, ON</p>
+        <p>
+          Day-to-day sourcing, quoting and order management for industrial customers —
+          manufacturers in automotive, steel, food processing, energy and general industry.
+          The work is part-number detective work as much as sales: identify the part, find a
+          source, verify the cross, and keep the order moving.
+        </p>
+        <ul>
+          <li>Source and quote bearings, power transmission, hydraulics &amp; pneumatics, seals, and safety/identification products across a broad manufacturer line card</li>
+          <li>Cross-reference part numbers across brands — interchange charts, dimensional and spec-based equivalents, not just exact-number matches</li>
+          <li>Run vendor RFQs, compare price and lead time, and coordinate orders through BDI’s central purchasing schedule</li>
+          <li>Work niche and OEM machine-builder specials that don’t sit in standard catalogues, direct to manufacturer and channel partners</li>
+          <li>Landed my first new account — an industrial manufacturer in Wallaceburg, ON — and support accounts across the Windsor–Essex industrial base</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">2021 — 2026</div>
+      <div>
+        <h3>Warehouse Manager · Inventory Manager · Backup Sales</h3>
+        <p class="org">The Floor Store</p>
+        <p>
+          Experience grounded across a multitude of sections of the business — not one
+          narrow role. That breadth is the shop-floor grounding behind how I talk to
+          maintenance and plant people today: materials, tools, wear, and what actually
+          fails in service.
+        </p>
+        <ul>
+          <li><strong>Warehouse manager</strong> — ran the warehouse side of the operation, keeping product moving in, stored, and out to jobs</li>
+          <li><strong>Inventory manager</strong> — responsible for stock: what was on hand, what was counted, and what needed to be reordered</li>
+          <li><strong>Backup sales</strong> — stepped onto the sales side when needed, working directly with customers on the floor</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section aria-labelledby="train-h">
+    <div class="sec-head">
+      <h2 id="train-h">Training &amp; credentials</h2>
+      <p>17 completions · Sep – Nov 2026</p>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filter training by provider">
+      <button class="fbtn" type="button" data-filter="all" aria-pressed="true">All training</button>
+      <button class="fbtn" type="button" data-filter="regal" aria-pressed="false">Regal Rexnord</button>
+      <button class="fbtn" type="button" data-filter="timken" aria-pressed="false">Timken</button>
+      <button class="fbtn" type="button" data-filter="nsk" aria-pressed="false">NSK</button>
+    </div>
+
+    <article class="issuer" data-issuer="regal">
+      <div class="issuer-head">
+        <h3>Regal Rexnord — CENTAFLEX Couplings</h3>
+        <span class="badge">Full series</span>
+        <span class="idate">Nov 3, 2026</span>
+      </div>
+      <p>
+        The complete CENTA torsionally flexible coupling series from Regal Rexnord Training —
+        all nine modules completed in a single day, covering the full CENTAFLEX range used
+        across power transmission applications.
+      </p>
+      <ul class="courses">
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">CENTA Couplings Introduction<span class="cmeta">Nov 3, 2026</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">CENTAFLEX-A Couplings<span class="cmeta">Nov 3, 2026</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">CENTAFLEX-X Couplings<span class="cmeta">Nov 3, 2026</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">CENTAFLEX-B Couplings<span class="cmeta">Nov 3, 2026</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">CENTAFLEX-H, K, and KE Couplings<span class="cmeta">Nov 3, 2026</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">CENTAFLEX-D and -E Couplings<span class="cmeta">Nov 3, 2026</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">CENTAFLEX-DS Couplings<span class="cmeta">Nov 3, 2026</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">CENTAFLEX-R and CENTAFLEX-TIR Couplings<span class="cmeta">Nov 3, 2026</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">CENTAFLEX-AM and CENTAFLEX-AGM Couplings<span class="cmeta">Nov 3, 2026</span></span></li>
+      </ul>
+    </article>
+
+    <article class="issuer" data-issuer="timken">
+      <div class="issuer-head">
+        <h3>Timken — Distributor Training School</h3>
+        <span class="badge">Level 1</span>
+        <span class="idate">Oct 2026</span>
+      </div>
+      <p>
+        Timken’s distributor-channel standard for bearing product knowledge. The Mounted
+        Bearings badge (digital badge issued Oct 15, 2026) covers mounted bearing
+        identification, key dimensions, features and benefits, nomenclature, housings,
+        seals and locking devices.
+      </p>
+      <ul class="courses">
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Bearing Basics<span class="cmeta">Oct 1, 2026</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">DTS Level 1 — Bearing Badge<span class="cmeta">Oct 2, 2026</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">DTS Level 1 — Mounted Bearings Badge<span class="cmeta">Issued Oct 15, 2026</span></span></li>
+      </ul>
+    </article>
+
+    <article class="issuer" data-issuer="nsk">
+      <div class="issuer-head">
+        <h3>NSK Academy</h3>
+        <span class="badge">5 certificates</span>
+        <span class="idate">Sep 2026</span>
+      </div>
+      <p>
+        NSK’s certified e-learning academy — bearing fundamentals through to machine-tool
+        precision bearings and linear motion.
+      </p>
+      <ul class="courses">
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Bearing Basics<span class="cmeta">Sep 24, 2026</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Linear Guides — NH/NS Series<span class="cmeta">Sep 28, 2026</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Precision Bearings for Machine Tools<span class="cmeta">Sep 28, 2026</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Induction Heaters<span class="cmeta">Sep 28, 2026</span></span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Self-Lube Bearing Units<span class="cmeta">Sep 29, 2026</span></span></li>
+      </ul>
+    </article>
+  </section>
+
+  <section aria-labelledby="know-h">
+    <div class="sec-head">
+      <h2 id="know-h">Product areas I work in</h2>
+      <p>BDI Canada line card</p>
+    </div>
+    <div class="grid">
+      <div class="area"><h3>Bearings</h3><p>Ball &amp; roller bearings, mounted units, precision machine-tool bearings, linear guides and shafting.</p></div>
+      <div class="area"><h3>Power transmission</h3><p>Couplings (incl. CENTAFLEX), belts, chain &amp; sprockets, gearboxes and drive components.</p></div>
+      <div class="area"><h3>Hydraulics &amp; pneumatics</h3><p>Bosch Rexroth hydraulics and pneumatics, hose and fittings, pumps and valves.</p></div>
+      <div class="area"><h3>Seals &amp; fluid sealing</h3><p>Rotary and hydraulic seals, O-rings, seal kits and aftermarket equivalents by equipment model.</p></div>
+      <div class="area"><h3>Safety &amp; identification</h3><p>Brady lockout/tagout, labels, tags and signage for plant safety and compliance.</p></div>
+      <div class="area"><h3>Fittings &amp; fluid power</h3><p>Tube and pipe fittings (Tubefit and others), fluid connectors and related components.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="appr-h">
+    <div class="sec-head">
+      <h2 id="appr-h">How I learn a product</h2>
+      <p>My working method</p>
+    </div>
+    <div class="approach">
+      <div class="flow"><span>Product</span><span class="arrow" aria-hidden="true">→</span><span>Application</span><span class="arrow" aria-hidden="true">→</span><span>Customer problem</span></div>
+      <p>
+        Every new product line starts with the manufacturer’s own training, then how the part
+        is actually applied in the plant, then the failure or problem the customer is trying
+        to solve. I keep a running problem library from real orders — what failed, what crossed
+        to what, and which supplier route worked — so the next quote starts from experience,
+        not a catalogue search.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <span>Sean Hendrican · BDI Canada Inc. · Windsor, Ontario</span>
+    <span>Training record current to November 4, 2026 · <a href="https://www.bdiexpress.com" target="_blank" rel="noopener">bdiexpress.com</a></span>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  // Training filter — in-memory UI state only
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.fbtn'));
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.issuer'));
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var f = btn.getAttribute('data-filter');
+      buttons.forEach(function(b){ b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      cards.forEach(function(card){
+        card.hidden = !(f === 'all' || card.getAttribute('data-issuer') === f);
+      });
+    });
+  });
+
+  // Copy email
+  var copyBtn = document.getElementById('copyEmail');
+  var label = document.getElementById('copyLabel');
+  var email = 'Sean.hendrican@bdi-canada.com';
+  copyBtn.addEventListener('click', function(){
+    function done(){
+      label.textContent = 'Copied';
+      label.classList.add('copied');
+      setTimeout(function(){ label.textContent = 'Copy email'; label.classList.remove('copied'); }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(email).then(done, function(){ fallback(); });
+    } else { fallback(); }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = email; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch(e){}
+      document.body.removeChild(ta);
+    }
+  });
+})();
+</script>
+</body>
+</html>
