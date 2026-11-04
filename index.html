@@ -8,7 +8,7 @@
 <meta property="og:title" content="Sean Hendrican — Experience & Training" />
 <meta property="og:description" content="Inside sales for industrial MRO — bearings, power transmission, hydraulics & seals. I learn the product the manufacturer's way, then the application, then the customer's problem." />
 <meta property="og:type" content="profile" />
-<link rel="icon" href="data:," />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317202e'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23f4f4f1' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23f4f4f1'/%3E%3C/svg%3E" />
 <title>Sean Hendrican — Experience &amp; Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -238,6 +238,20 @@
   .history[open ] > summary{margin-bottom:18px}
   .history[open ] > summary::after{transform:rotate(225deg) translate(-1px,-1px)}
   .history > summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+  /* ---------- collapsible per-issuer course lists ---------- */
+  details.issuer > summary.issuer-head{
+    cursor:pointer;list-style:none;padding-bottom:18px;
+  }
+  details.issuer > summary.issuer-head::-webkit-details-marker{display:none}
+  details.issuer > summary.issuer-head::after{
+    content:"";flex:0 0 auto;align-self:center;width:9px;height:9px;margin-left:2px;
+    border-right:2.5px solid var(--accent);border-bottom:2.5px solid var(--accent);
+    transform:rotate(45deg) translate(-1px,-1px);
+  }
+  details.issuer[open ] > summary.issuer-head{padding-bottom:6px}
+  details.issuer[open ] > summary.issuer-head::after{transform:rotate(225deg) translate(-1px,-1px)}
+  details.issuer > summary.issuer-head:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 
   /* ---------- case studies ---------- */
   .case{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:22px 24px;margin-bottom:16px}
@@ -635,11 +649,8 @@
       </article>
     </div>
 
-    <div class="nsk-certs" aria-label="NSK Academy certificates">
-      <div class="nsk-certs-head">
-        <h3>NSK Academy certificates</h3>
-        <p>6 certificates · issued by NSK Academy</p>
-      </div>
+    <details class="nsk-certs history">
+    <summary>NSK Academy certificates <span class="hcount">6 certificates · issued by NSK Academy</span></summary>
       <div class="nsk-cert-grid">
         <article class="nsk-cert">
           <div class="nc-top">
@@ -701,7 +712,7 @@
           <a class="nc-link" href="https://europe.nskacademy.com/pluginfile.php/1/tool_certificate/issues/1793811289/1741471760SH.pdf" target="_blank" rel="noopener">View certificate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
         </article>
       </div>
-    </div>
+    </details>
 
     <details class="history">
     <summary>Full training history <span class="hcount">All 59 completions</span></summary>
@@ -713,12 +724,12 @@
       <button class="fbtn" type="button" data-filter="nsk" aria-pressed="false">NSK</button>
     </div>
 
-    <article class="issuer" data-issuer="regal">
-      <div class="issuer-head">
+    <details class="issuer" data-issuer="regal">
+      <summary class="issuer-head">
         <h3>Regal Rexnord Training</h3>
         <span class="badge">18 courses</span>
         <span class="idate">Nov 3–4, 2026</span>
-      </div>
+      </summary>
       <p>
         The CENTA Couplings Curriculum from Regal Rexnord Training — one 14-course
         curriculum covering the full CENTAFLEX range and the advanced CENTA coupling
@@ -762,14 +773,14 @@
         <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Introduction to Power Transmission</span></li>
         </ul>
       </div>
-    </article>
+    </details>
 
-    <article class="issuer" data-issuer="timken">
-      <div class="issuer-head">
+    <details class="issuer" data-issuer="timken">
+      <summary class="issuer-head">
         <h3>Timken — Distributor Training School</h3>
         <span class="badge">Level 1 · 35 activities</span>
         <span class="idate">Oct 1–15, 2026</span>
-      </div>
+      </summary>
       <p>
         Timken’s distributor-channel standard for bearing product knowledge. My DTS Level 1
         learning history shows 35 completed activities: 32 course completions across three
@@ -839,14 +850,14 @@
           <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Industrial Motion Program</span></li>
         </ul>
       </div>
-    </article>
+    </details>
 
-    <article class="issuer" data-issuer="nsk">
-      <div class="issuer-head">
+    <details class="issuer" data-issuer="nsk">
+      <summary class="issuer-head">
         <h3>NSK Academy</h3>
         <span class="badge">6 certificates</span>
         <span class="idate">Sep – Nov 2026</span>
-      </div>
+      </summary>
       <p>
         NSK’s certified e-learning academy — bearing fundamentals through to machine-tool
         precision bearings and linear motion. Six certificates, most recently Roller Guides -
@@ -860,7 +871,7 @@
         <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Self-Lube Bearing Units<span class="cmeta">Sep 29, 2026 · <a href="https://europe.nskacademy.com/pluginfile.php/1/tool_certificate/issues/1790707370/8468535200SH.pdf" target="_blank" rel="noopener">Certificate (PDF)</a></span></span></li>
         <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cname">Roller Guides - RA series<span class="cmeta">Nov 4, 2026 · <a href="https://europe.nskacademy.com/pluginfile.php/1/tool_certificate/issues/1793811289/1741471760SH.pdf" target="_blank" rel="noopener">Certificate (PDF)</a></span></span></li>
       </ul>
-    </article>
+    </details>
     </details>
   </section>
 
@@ -962,6 +973,27 @@
         <p class="krow"><strong>Questions to ask</strong>What shaft size, and which housing style and footprint? How does the insert lock to the shaft? What sealing does the environment need?</p>
       </article>
 
+      <article class="kc-card" data-category="bearings">
+        <span class="kc-tag">Bearings</span>
+        <h3>Bearing types at a glance — matching the type to the load</h3>
+        <p>The bearing type decides what loads it can carry and how it handles misalignment. Deep groove ball bearings carry radial load and moderate axial load in both directions, which is why they turn up everywhere. Angular contact ball bearings are built for combined load with axial load in one direction, and are often used in matched pairs. Cylindrical roller bearings carry heavy radial load but little axial load. Spherical roller bearings carry heavy combined load and tolerate shaft misalignment. Tapered roller bearings carry heavy combined load and are normally set up in opposed pairs.</p>
+        <p class="krow"><strong>Questions to ask</strong>Which way does the load act — radial, axial, or both? Is there misalignment to absorb? Does the bearing run as supplied, or is it adjusted in a pair?</p>
+      </article>
+
+      <article class="kc-card" data-category="bearings">
+        <span class="kc-tag">Bearings</span>
+        <h3>Sealed, shielded or open — reading a bearing's closures</h3>
+        <p>Closures decide how a bearing is lubricated and protected. An open bearing has no closure: it relies on the equipment's own lubrication and sealing. A shielded bearing carries metal shields that keep larger contamination out while leaving the bearing open to the surrounding oil or grease. A sealed bearing has contact rubber seals that retain its own grease fill and exclude contamination — the usual choice where re-lubrication isn't practical. Designations commonly use suffix letters to show which closure is fitted, but suffix conventions vary by maker, so they are confirmed against that maker's system.</p>
+        <p class="krow"><strong>How to identify one</strong>Look at the bearing's faces: exposed rolling elements means open, a metal disc means shielded, and a rubber-lipped disc that touches the inner ring means sealed.</p>
+      </article>
+
+      <article class="kc-card" data-category="bearings">
+        <span class="kc-tag">Bearings</span>
+        <h3>Bearing failure signs — reading what the old bearing says</h3>
+        <p>A failed bearing usually records why it failed. Flaking or spalling on a raceway points to fatigue or overload. Evenly spaced dents point to impact damage in handling or mounting. Discoloration points to overheating, and pitting with rust points to water or contamination getting in. Damage concentrated on one side can point to misalignment. Reading the pattern before fitting the replacement matters: a like-for-like swap into the same conditions usually repeats the failure.</p>
+        <p class="krow"><strong>Questions to ask</strong>Is the damage even all the way around, or concentrated on one side? Any discoloration, rust or denting? How was it lubricated — and how did it sound before it failed?</p>
+      </article>
+
       <article class="kc-card" data-category="power-transmission">
         <span class="kc-tag">Power Transmission</span>
         <h3>Couplings — identifying what you have</h3>
@@ -983,6 +1015,27 @@
         <h3>Belts and chain — reading the markings</h3>
         <p>For belts, the profile and length markings printed on the belt identify it — the section and length of a V-belt, or the pitch and width of a synchronous (timing) belt. For roller chain, measure the pitch (pin-to-pin distance) and count the strands — single, duplex or triplex — and note whether it is ANSI or ISO/BS standard, as the two are not interchangeable.</p>
         <p class="krow"><strong>Questions to ask</strong>Belt: which profile, and what length? Chain: what pitch, how many strands, ANSI or ISO/BS?</p>
+      </article>
+
+      <article class="kc-card" data-category="power-transmission">
+        <span class="kc-tag">Power Transmission</span>
+        <h3>Gear reducers — reading the nameplate</h3>
+        <p>A gearbox is identified from its nameplate first: maker and model, ratio, input rating, mounting arrangement and service factor. The ratio tells you how much the input speed is reduced and the torque multiplied. Off the nameplate, confirm the input and output shaft sizes, which way the output turns, and how the unit mounts — foot, flange or shaft-mounted. Two reducers with the same ratio are not interchangeable if the shafts, mounting or output rotation differ.</p>
+        <p class="krow"><strong>How to identify one</strong>Photograph the nameplate, then measure the input and output shafts and sketch the mounting footprint and output rotation.</p>
+      </article>
+
+      <article class="kc-card" data-category="power-transmission">
+        <span class="kc-tag">Power Transmission</span>
+        <h3>Roller chain wear — elongation and sprocket teeth</h3>
+        <p>Chain doesn't really stretch — it elongates as the pins and bushings wear, so the pitch effectively grows and the chain starts to ride higher on the sprocket teeth. That mismatch wears the teeth into a hooked profile, and hooked teeth then accelerate chain wear in return. The pair are usually assessed together: a new chain on hooked sprockets, or new sprockets under a worn chain, wears out quickly. Lubrication and slack tell much of the story — dry, rusty chain on hooked teeth means the drive ran worn for some time.</p>
+        <p class="krow"><strong>How to identify one</strong>Check for stiff links and excess slack that adjustment can't take up, and look at the tooth profile — symmetrical teeth, or hooked, one-sided wear.</p>
+      </article>
+
+      <article class="kc-card" data-category="power-transmission">
+        <span class="kc-tag">Power Transmission</span>
+        <h3>Belt drive wear — what belts and sheaves show</h3>
+        <p>V-belts wear in the grooves as much as on the belt itself. Cracking and hardening point to age and heat; glazing — a shiny, hard surface — points to slipping; fraying or uneven wear across a multi-belt set points to misalignment or a damaged groove. Belts in a matched set share the load, which is why a set is replaced as a set rather than one belt at a time. Sheave grooves wear too: a worn groove lets the belt sit too deep and slip, so the groove condition is checked alongside the belt.</p>
+        <p class="krow"><strong>Questions to ask</strong>One belt or a matched set? Any cracking, glazing or fraying? Are the sheave grooves worn, and are the sheaves aligned?</p>
       </article>
 
       <article class="kc-card" data-category="seals">
@@ -1008,6 +1061,27 @@
         <p class="krow"><strong>Questions to ask</strong>Full kit, or individual seals? If it’s a cylinder application, what are the equipment make and model?</p>
       </article>
 
+      <article class="kc-card" data-category="seals">
+        <span class="kc-tag">Seals</span>
+        <h3>Seal materials at a glance — NBR, FKM, silicone and PTFE</h3>
+        <p>Material decides what a seal survives. Nitrile (NBR) is the general-purpose choice for petroleum oils and greases. FKM fluoroelastomer handles higher temperatures and more aggressive chemicals, where nitrile would harden or swell. Silicone tolerates a wide temperature range but tears more easily and is a poor match for many oils. PTFE resists almost all chemicals and runs with low friction, but it isn't elastic like rubber, so it seals differently. The wrong material often looks right dimensionally — then swells, hardens or cracks in service.</p>
+        <p class="krow"><strong>Questions to ask</strong>What fluid, and over what temperature range? Any chemical exposure or washdown? What did the old seal look like — swollen, hardened or cracked?</p>
+      </article>
+
+      <article class="kc-card" data-category="seals">
+        <span class="kc-tag">Seals</span>
+        <h3>O-rings — sizing and material basics</h3>
+        <p>An O-ring is identified by two dimensions — its inside diameter and its cross-section (thickness) — along with its material. It seals by being slightly compressed in its groove, so the groove's condition matters as much as the ring's: a nicked, twisted or flattened ring, or a scored groove, leaks even at the right size. Material follows the same logic as other seals: nitrile for general oil duty, FKM where heat or chemicals demand it. A removed O-ring that has taken a flat set or swelled out of shape is telling you about the duty it saw.</p>
+        <p class="krow"><strong>How to identify one</strong>Measure the inside diameter and cross-section without stretching the ring, and check whether it has swelled or flattened compared with a fresh, round profile.</p>
+      </article>
+
+      <article class="kc-card" data-category="seals">
+        <span class="kc-tag">Seals</span>
+        <h3>Inside a hydraulic cylinder — rod, piston and wiper seals</h3>
+        <p>Each seal position in a cylinder does a different job. The rod seal keeps pressurized fluid inside as the rod strokes. The wiper (scraper) at the rod opening keeps dirt and moisture from being drawn in as the rod retracts. The piston seal separates the two pressure sides of the piston, so the cylinder can push and pull. Wear rings guide the piston and rod and keep metal from contacting the tube. The symptom points to the position: leaking at the rod is the rod seal, drifting under load is the piston seal bypassing, and contamination getting in starts at the wiper.</p>
+        <p class="krow"><strong>Questions to ask</strong>Is it leaking at the rod, or drifting under load? Is contamination getting past the wiper? A kit for the whole cylinder, or one position only?</p>
+      </article>
+
       <article class="kc-card" data-category="hydraulics">
         <span class="kc-tag">Hydraulics/Fluid Power</span>
         <h3>Hydraulic and pneumatic components — function first</h3>
@@ -1021,6 +1095,34 @@
         <h3>Tube and pipe fittings — thread type first</h3>
         <p>Thread type and size come first — NPT, BSP and metric threads are not interchangeable, and forcing a mismatch damages both sides of the connection. Then confirm the tube or hose size, the material, the configuration (straight, elbow, tee) and the pressure rating.</p>
         <p class="krow"><strong>Questions to ask</strong>What does it connect to on each end? What pressure does the line see? Stainless, steel or brass — and what’s running through it?</p>
+      </article>
+
+      <article class="kc-card" data-category="hydraulics">
+        <span class="kc-tag">Hydraulics/Fluid Power</span>
+        <h3>Hydraulic hose — reading the layline</h3>
+        <p>A hydraulic hose announces itself on its cover: the printed line running along its length (the layline) normally carries the maker, the size, and the construction or standard type. The hose itself is built in layers — an oil-resistant inner tube, reinforcement (braid or spiral wire) that carries the pressure, and a cover that protects against abrasion and weather. When the layline has worn away, the size is confirmed from the inside diameter and the end fittings, and the construction from the hose's weight and flexibility.</p>
+        <p class="krow"><strong>How to identify one</strong>Read the layline first. If it's gone, identify by inside diameter and fitting ends — and check the cover for abrasion worn down to the reinforcement.</p>
+      </article>
+
+      <article class="kc-card" data-category="hydraulics">
+        <span class="kc-tag">Hydraulics/Fluid Power</span>
+        <h3>How hose ends seal — flare, face seal and taper threads</h3>
+        <p>Hydraulic connections seal in different ways, and telling them apart prevents mismatches. Tapered pipe threads seal on the thread itself. Flared connections seal metal-to-metal on a cone seat. O-ring face-seal and boss connections seal on an elastomer ring compressed against a flat face or into a port. Ends can look similar in size while sealing completely differently, so the seat — not just the thread — is what gets identified.</p>
+        <p class="krow"><strong>How to identify one</strong>Examine the sealing surface: thread only, an angled cone seat, or a flat face with an O-ring. Then confirm the thread type and size.</p>
+      </article>
+
+      <article class="kc-card" data-category="hydraulics">
+        <span class="kc-tag">Hydraulics/Fluid Power</span>
+        <h3>Hydraulic cylinders — types and identification</h3>
+        <p>Cylinders convert fluid pressure into linear force, and the common constructions are easy to tell apart. Tie-rod cylinders are held together by rods running the length of the barrel — common in industrial service and rebuildable. Welded cylinders have their ends welded to the barrel — more compact, and common on mobile equipment. Telescopic cylinders nest several stages for a long stroke from a short retracted length. Single-acting versus double-acting shows in the porting: pressure one way with spring or load return takes one port; pressure both ways takes two.</p>
+        <p class="krow"><strong>Questions to ask</strong>Tie-rod, welded or telescopic? Single or double-acting? How does it mount — and is it leaking externally, or bypassing internally?</p>
+      </article>
+
+      <article class="kc-card" data-category="hydraulics">
+        <span class="kc-tag">Hydraulics/Fluid Power</span>
+        <h3>Contamination control — keeping hydraulic fluid clean</h3>
+        <p>Most hydraulic wear traces back to contamination: dirt, wear particles and water circulating in the fluid act like grinding compound on pumps, valves and seals. That is why systems are built around filtration — suction strainers, pressure and return-line filters, and a breather on the reservoir — and why filter elements are service items, not lifetime parts. Clean handling matters as much as the filters: new fluid is not necessarily clean fluid, and every opened line or removed cap is a chance for dirt to get in.</p>
+        <p class="krow"><strong>Questions to ask</strong>Which filters are fitted, and when were the elements last changed? Is the reservoir breather intact? Any milky fluid (water) or metallic sparkle in drained oil?</p>
       </article>
 
       <article class="kc-card" data-category="safety">
@@ -1038,6 +1140,34 @@
         <p class="krow"><strong>Questions to ask</strong>Where will the labels live, and what do they have to survive?</p>
       </article>
 
+      <article class="kc-card" data-category="safety">
+        <span class="kc-tag">Safety</span>
+        <h3>Lockout devices — hasps, personal locks and device types</h3>
+        <p>Lockout hardware matches the device to the isolating point: clamp-on and snap-on devices for circuit breakers, lockouts that enclose plugs, and gate-valve and ball-valve lockouts that cover the handle so it can't be operated. Where several people work on the same equipment, a lockout hasp lets each person apply their own personal lock — the equipment can't be re-energized until every lock is off, and each lock is removed only by the person who applied it.</p>
+        <p class="krow"><strong>Questions to ask</strong>How many isolation points, and of what types? How many people need to lock out at once? Each person's own lock, or locks keyed alike?</p>
+      </article>
+
+      <article class="kc-card" data-category="safety">
+        <span class="kc-tag">Safety</span>
+        <h3>Stored energy — the energy that remains after shutdown</h3>
+        <p>Switching off doesn't make equipment safe by itself. Stored energy can remain in pressurized hydraulic and pneumatic lines, in raised loads and suspended parts (gravity), in wound or compressed springs, and in hot surfaces or fluids. Lockout therefore includes releasing or restraining that energy — bleeding pressure, blocking or lowering raised parts — and then verifying: try the controls and check for pressure before work starts. The verify step is what catches the isolation point that was missed.</p>
+        <p class="krow"><strong>Questions to ask</strong>What can still move, pressurize, fall or discharge after shutdown? How is each source released or blocked — and how is zero energy verified?</p>
+      </article>
+
+      <article class="kc-card" data-category="safety">
+        <span class="kc-tag">Safety</span>
+        <h3>Pipe and equipment marking — contents and flow</h3>
+        <p>Plant identification works when it's consistent: pipes marked with their contents and flow direction, valves tagged to the systems they serve, and equipment labelled to match the names used in procedures and lockout lists. A label that matches the procedure is what lets someone isolate the right line quickly — and a missing or mismatched one is a hazard in itself. Marking is planned as a system — what's marked, where, and in what wording — rather than tag-by-tag as problems are noticed.</p>
+        <p class="krow"><strong>Questions to ask</strong>Do the equipment names on labels match the lockout procedures? Are pipe contents and flow direction shown where lines are worked on?</p>
+      </article>
+
+      <article class="kc-card" data-category="safety">
+        <span class="kc-tag">Safety</span>
+        <h3>Accident-prevention tags — temporary warnings on equipment</h3>
+        <p>Tags are the temporary half of safety identification: a do-not-operate tag on equipment that is faulty, under repair or locked out warns everyone who reaches for the controls. Unlike a permanent label, a tag is tied to a condition — it goes on when the condition starts, records who applied it and why, and comes off only when the condition is cleared, normally by the person who applied it. A tag alone doesn't physically prevent operation the way a lock does, which is why tags support lockout rather than replace it.</p>
+        <p class="krow"><strong>Questions to ask</strong>Is the warning temporary (a tag) or permanent (a label)? Who applied it, and who may remove it? Is a lock also required?</p>
+      </article>
+
       <article class="kc-card" data-category="pumps-valves">
         <span class="kc-tag">Pumps &amp; Valves</span>
         <h3>Pumps — confirming a replacement</h3>
@@ -1050,6 +1180,33 @@
         <h3>Valves — function, spool and porting</h3>
         <p>Valves direct, limit or regulate flow. Identify by function first — directional, pressure or flow control — then the spool or porting pattern, how the valve is actuated (solenoid, manual or pilot), port sizes and thread type, and the pressure rating. On a directional valve, the spool configuration has to match the original, not just the body size.</p>
         <p class="krow"><strong>Questions to ask</strong>What does the valve control, and how is it actuated? What are the port sizes, and what pressure does the system run at?</p>
+      </article>
+      <article class="kc-card" data-category="pumps-valves">
+        <span class="kc-tag">Pumps &amp; Valves</span>
+        <h3>Centrifugal vs. positive-displacement pumps</h3>
+        <p>The two pump families behave oppositely, and confusing them causes damage. A centrifugal pump throws fluid outward with an impeller: flow is greatest at low resistance and falls as discharge pressure rises. A positive-displacement pump — gear, vane, piston or screw — traps a fixed volume and pushes it out on every cycle: flow stays nearly constant, and against a blocked discharge the pressure climbs until something gives, which is why these pumps need a relief valve protecting the discharge side.</p>
+        <p class="krow"><strong>How to identify one</strong>Look for an impeller housing (a volute) versus a compact gear or piston body — and check whether the system has a discharge relief valve, which positive displacement requires.</p>
+      </article>
+
+      <article class="kc-card" data-category="pumps-valves">
+        <span class="kc-tag">Pumps &amp; Valves</span>
+        <h3>Pump cavitation — the gravel noise</h3>
+        <p>Cavitation sounds like the pump is pumping gravel or marbles, and it means the inlet side is starved: vapour bubbles form in the low-pressure zone at the inlet and collapse violently as pressure rises, eroding the impeller or pump internals. The causes live on the suction side — a clogged strainer, an undersized or kinked suction line, fluid too thick when cold, or the reservoir level too low. It's a supply problem, not a pump-quality problem: a replacement pump cavitates the same way until the inlet condition is fixed.</p>
+        <p class="krow"><strong>Questions to ask</strong>When did the noise start — with cold fluid, a level change, or a strainer service? Is the suction line clear and the reservoir level right?</p>
+      </article>
+
+      <article class="kc-card" data-category="pumps-valves">
+        <span class="kc-tag">Pumps &amp; Valves</span>
+        <h3>Relief valves — the system's pressure ceiling</h3>
+        <p>A relief valve is a normally closed valve that opens at a set pressure and returns flow to tank, capping the pressure the whole system can build — every positive-displacement system depends on one. The symptoms point both ways: system-wide low pressure and slow actuators if it's stuck open or passing, overheating and noise if the pump works against it constantly. The setting is matched to what the weakest component in the system can take, not simply turned up when actuators feel weak.</p>
+        <p class="krow"><strong>Questions to ask</strong>Is pressure low everywhere, or only in one function? Is the oil overheating? Has the setting been changed from the original?</p>
+      </article>
+
+      <article class="kc-card" data-category="pumps-valves">
+        <span class="kc-tag">Pumps &amp; Valves</span>
+        <h3>Check valves and flow controls — one-way flow and speed</h3>
+        <p>Two simple valve functions appear everywhere. A check valve allows flow one way only — used to hold a load, protect a pump from reverse flow, or keep a circuit primed; pilot-operated versions can be opened for reverse flow when a load has to be lowered under control. A flow-control valve restricts flow to set an actuator's speed, often with a built-in check valve so one direction is controlled and the return flows freely. Which is fitted, and which direction it controls, decides whether a holding or speed problem is a valve issue at all.</p>
+        <p class="krow"><strong>Questions to ask</strong>Is the problem holding a load, or controlling speed — and in which direction? Controlled flow one way, or both ways?</p>
       </article>
     </div>
 
