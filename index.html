@@ -192,6 +192,36 @@
   .verify figcaption strong{display:block;color:var(--ink);font-size:13px}
   .verify figcaption a{font-weight:600}
 
+  /* ---------- NSK certificate cards ---------- */
+  .nsk-certs{margin:4px 0 22px}
+  .nsk-certs-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:12px}
+  .nsk-certs-head h3{margin:0;font-size:16.5px;font-weight:700}
+  .nsk-certs-head p{margin:0;color:var(--ink-3);font-size:13px;font-family:"IBM Plex Mono",monospace}
+  .nsk-cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media (max-width:760px){.nsk-cert-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.nsk-cert-grid{grid-template-columns:1fr}}
+  .nsk-cert{
+    background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);
+    padding:16px 18px 15px;display:flex;flex-direction:column;gap:0;
+  }
+  .nsk-cert .nc-top{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+  .nsk-cert .nc-mark{
+    flex:0 0 30px;width:30px;height:30px;border-radius:8px;
+    background:var(--accent-soft);color:var(--accent-ink);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .nsk-cert .nc-mark svg{width:16px;height:16px}
+  .nsk-cert .nc-issuer{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3)}
+  .nsk-cert h4{margin:0 0 5px;font-size:15.5px;font-weight:700;line-height:1.35}
+  .nsk-cert .nc-date{margin:0;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-3)}
+  .nsk-cert .nc-link{
+    margin-top:auto;padding-top:14px;
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:14px;font-weight:600;text-decoration:none;color:var(--accent-ink);
+  }
+  .nsk-cert .nc-link svg{width:14px;height:14px;flex:0 0 14px}
+  .nsk-cert .nc-link:hover{text-decoration:underline;text-underline-offset:3px}
+
   /* ---------- expandable full history ---------- */
   .history > summary{
     cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;
@@ -560,6 +590,74 @@
         <p class="cred-sub">The complete CENTA torsionally flexible coupling series — the full CENTAFLEX range, completed in a single day — plus Sealmaster mounted ball bearings, worm gear fundamentals, and introductions to powertrain and power transmission.</p>
         <p class="cred-date">CENTAFLEX series completed Nov 3, 2026</p>
       </article>
+    </div>
+
+    <div class="nsk-certs" aria-label="NSK Academy certificates">
+      <div class="nsk-certs-head">
+        <h3>NSK Academy certificates</h3>
+        <p>6 certificates · issued by NSK Academy</p>
+      </div>
+      <div class="nsk-cert-grid">
+        <article class="nsk-cert">
+          <div class="nc-top">
+            <span class="nc-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg></span>
+            <span class="nc-issuer">NSK Academy</span>
+          </div>
+          <h4>Bearing Basics</h4>
+          <p class="nc-date">Completed Sep 24, 2026</p>
+          <a class="nc-link" href="https://europe.nskacademy.com/pluginfile.php/1/tool_certificate/issues/1790268381/6766343703SU.pdf" target="_blank" rel="noopener">View certificate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        </article>
+
+        <article class="nsk-cert">
+          <div class="nc-top">
+            <span class="nc-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg></span>
+            <span class="nc-issuer">NSK Academy</span>
+          </div>
+          <h4>Linear Guides - NH/NS series</h4>
+          <p class="nc-date">Completed Sep 28, 2026</p>
+          <a class="nc-link" href="https://europe.nskacademy.com/pluginfile.php/1/tool_certificate/issues/1790598690/6880323627SH.pdf" target="_blank" rel="noopener">View certificate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        </article>
+
+        <article class="nsk-cert">
+          <div class="nc-top">
+            <span class="nc-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg></span>
+            <span class="nc-issuer">NSK Academy</span>
+          </div>
+          <h4>Precision Bearings for Machine Tools</h4>
+          <p class="nc-date">Completed Sep 28, 2026</p>
+          <a class="nc-link" href="https://europe.nskacademy.com/pluginfile.php/1/tool_certificate/issues/1790619482/2134530974SH.pdf" target="_blank" rel="noopener">View certificate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        </article>
+
+        <article class="nsk-cert">
+          <div class="nc-top">
+            <span class="nc-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg></span>
+            <span class="nc-issuer">NSK Academy</span>
+          </div>
+          <h4>Induction Heaters</h4>
+          <p class="nc-date">Completed Sep 28, 2026</p>
+          <a class="nc-link" href="https://europe.nskacademy.com/pluginfile.php/1/tool_certificate/issues/1790624271/8552460960SH.pdf" target="_blank" rel="noopener">View certificate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        </article>
+
+        <article class="nsk-cert">
+          <div class="nc-top">
+            <span class="nc-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg></span>
+            <span class="nc-issuer">NSK Academy</span>
+          </div>
+          <h4>Self-Lube Bearing Units</h4>
+          <p class="nc-date">Completed Sep 29, 2026</p>
+          <a class="nc-link" href="https://europe.nskacademy.com/pluginfile.php/1/tool_certificate/issues/1790707370/8468535200SH.pdf" target="_blank" rel="noopener">View certificate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        </article>
+
+        <article class="nsk-cert">
+          <div class="nc-top">
+            <span class="nc-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg></span>
+            <span class="nc-issuer">NSK Academy</span>
+          </div>
+          <h4>Roller Guides - RA series</h4>
+          <p class="nc-date">Completed Nov 4, 2026</p>
+          <a class="nc-link" href="https://europe.nskacademy.com/pluginfile.php/1/tool_certificate/issues/1793811289/1741471760SH.pdf" target="_blank" rel="noopener">View certificate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        </article>
+      </div>
     </div>
 
     <details class="history">
